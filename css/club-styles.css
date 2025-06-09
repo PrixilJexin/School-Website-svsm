@@ -1,0 +1,85 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  z-index: 999;
+  width: 100%;
+}
+
+.unit-scroll-section {
+  padding-bottom: 1rem;
+}
+
+.unit-scroll-container {
+  width: 100%;
+}
+
+.unit-scroll-tile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.unit-scroll-tile:hover {
+  transform: translateY(-5px);
+}
+
+.unit-img {
+  width: 100%;
+  max-width: 600px;
+  max-height: 400px;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.unit-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.unit-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.unit-text {
+  font-size: 1.2rem;
+  padding-left: 40px;
+  line-height: 1.75;
+}
+
+/* Color themes per unit */
+.rsp .unit-scroll-tile     { background: linear-gradient(to right, #fffbe6, #ffec99); }
+.jrc .unit-scroll-tile     { background: linear-gradient(to right, #fff0f3, #ffd6d6); }
+.nss .unit-scroll-tile     { background: linear-gradient(to right, #e0f7ff, #cce5ff); }
+.rrc .unit-scroll-tile     { background: linear-gradient(to right, #ffe6e6, #ffb3b3); }
+.scouts .unit-scroll-tile  { background: linear-gradient(to right, #d0f0c0, #b0e57c); }
+.svpl .unit-scroll-tile    { background: linear-gradient(to right, #f3e5f5, #e1bee7); }
+.eco .unit-scroll-tile     { background: linear-gradient(to right, #d7fbe8, #b2f2bb); }
+
+/* Responsive: Stack on small screens */
+@media (max-width: 768px) {
+  .unit-scroll-tile {
+    flex-direction: column;
+  }
+
+  .unit-img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+  }
+}
+

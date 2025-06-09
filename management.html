@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>St.Vincent's School</title>
+
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+  body{
+  margin: 0;
+  font-family: var(--body-font-family); 
+  background: #98ffde93;
+  padding-top: 20px;
+  margin-top: 100px; /* ensures no overlap from navbar */
+}
+
+#staff-container {
+  padding: 10px;
+}
+
+.subject-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  margin: 60px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 6px solid #007BFF;
+  padding-left: 14px;
+}
+
+.subject-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 70px;
+  border: 2px solid #007BFF;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.subject-table th,
+.subject-table td {
+  border: 1px solid #ccc;
+  padding: 16px 20px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.subject-table th {
+  background-color: #eaf3ff;
+  font-weight: bold;
+}
+
+.teacher-name {
+  font-weight: 600;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .subject-table th,
+  .subject-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .subject-title {
+    font-size: 20px;
+  }
+}
+#leadership-section {
+  background-color: #ffffff;
+  padding: 1rem 0 5rem 0; /* added bottom margin */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Title */
+.leadership-title {
+  font-size: 2.8rem;
+  color: #222222;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Cards */
+.leadership-card {
+  background: #fff;
+  border: none;
+  border-radius: 1.25rem; /* a bit rounder */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px !important;
+}
+.leadership-card img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1.5rem auto 1rem auto;
+  display: block;
+}
+
+.leadership-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(13, 110, 253, 0.35);
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Image */
+.leadership-img {
+  height: 350px;
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 4px solid #0d6efd; /* subtle accent */
+  transition: transform 0.5s ease;
+}
+
+.leadership-card:hover .leadership-img {
+  transform: scale(1.1);
+}
+
+/* Name */
+.leadership-name {
+  font-size: 1.85rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #0d6efd, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.3rem;
+  text-transform: capitalize;
+}
+
+/* Role */
+.leadership-role {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #868e96;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Message */
+.leadership-message {
+  font-style: italic;
+  color: #6c757d;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  padding: 0 1.2rem 1.8rem 1.2rem;
+}
+
+</style>
+
+</head>
+
+<body>
+  <section class="preloader">
+    <div class="spinner">
+      <span class="sk-inner-circle"></span>
+    </div>
+  </section>
+
+  <main>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; margin-right: 10px; border: 2px solid #000;">
+            <img src="images/svslogo.jpeg" alt="School Logo" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <strong style="font-size: 27px;"><span>St.Vincent's</span> Matriculation School</strong>
+        </a>
+
+        <div class="d-lg-none">
+          <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <!-- About Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="school-overview.html">School Overview</a></li>
+                <li><a class="dropdown-item" href="management-staff.html">Management & Staff</a></li>
+                <li><a class="dropdown-item" href="achievements.html">School Achievements</a></li>
+              </ul>
+            </li>
+
+            <!-- Academics Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Academics</a>
+              <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+                <li><a class="dropdown-item" href="curriculum.html">Curriculum</a></li>
+                <li><a class="dropdown-item" href="timetable.html">Timetable</a></li>
+                <li><a class="dropdown-item" href="subjects.html">Subjects Offered</a></li>
+                <li><a class="dropdown-item" href="exam-schedules.html">Exam Schedules</a></li>
+              </ul>
+            </li>
+
+            <!-- Events Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Events</a>
+              <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                <li><a class="dropdown-item" href="annual-day.html">Annual Day</a></li>
+                <li><a class="dropdown-item" href="culturals.html">Culturals Event</a></li>
+              </ul>
+            </li>
+
+            <!-- Student Life Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="studentLifeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Student Life</a>
+              <ul class="dropdown-menu" aria-labelledby="studentLifeDropdown">
+                <li><a class="dropdown-item" href="sports.html">Sports & Fitness</a></li>
+                <li><a class="dropdown-item" href="clubs.html">Clubs & Activities</a></li>
+                <li><a class="dropdown-item" href="trips.html">School Trips</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          </ul>
+
+          <div class="d-none d-lg-block">
+            <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<section id="leadership-section" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold leadership-title">
+      Management & Staff
+    </h2>
+
+    <div class="row justify-content-center g-4">
+      <!-- Principal Card -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card leadership-card h-100">
+          <img src="images\image_2025-04-10_192120699.png" class="card-img-top leadership-img" alt="Principal Dr. A. B. Kumar">
+          <div class="card-body text-center px-4">
+            <h3 class="card-title fw-semibold mb-1 leadership-name">
+              Rev.Dr.Estheppan Thomas
+            </h3>
+            <p class="leadership-role">
+              Principal
+            </p>
+            <p class="card-text leadership-message">
+              “Our institution believes in empowering young minds through quality education, innovation, and discipline.”
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vice Principal Card -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card leadership-card h-100">
+          <img src="images\Screenshot 2025-06-07 171200.png" class="card-img-top leadership-img" alt="Vice Principal Prof. S. Meena">
+          <div class="card-body text-center px-4">
+            <h3 class="card-title fw-semibold mb-1 leadership-name">
+              Rev.Fr.Sebastian .CM
+            </h3>
+            <p class="leadership-role">
+              Vice Principal
+            </p>
+            <p class="card-text leadership-message">
+              “We are committed to nurturing an environment of learning, creativity, and inclusivity for every student.”
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Staff Section -->
+    <section id="staff-section" class="staff-section">
+      <div class="container">
+        <h2 class="section-title">Our Staff</h2>
+        <div id="staff-container"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-10 me-auto mb-4">
+          <h4 class="text-white mb-3"><a href="index.html">Little</a> Fashion</h4>
+          <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">
+            Copyright © 2022 <strong>Little Fashion</strong>
+          </p>
+          <br>
+          <p class="copyright-text">Designed by <a href="https://www.tooplate.com/" target="_blank">Tooplate</a></p>
+        </div>
+        <div class="col-lg-5 col-8">
+          <h5 class="text-white mb-3">Sitemap</h5>
+          <ul class="footer-menu d-flex flex-wrap">
+            <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Story</a></li>
+            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
+            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
+            <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
+            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-4">
+          <h5 class="text-white mb-3">Social</h5>
+          <ul class="social-icon">
+            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+            <li><a href="#" class="social-icon-link bi-skype"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS FILES -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/Headroom.js"></script>
+  <script src="js/jQuery.headroom.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/custom.js"></script>
+<body>
+  <!-- Staff Script -->
+<script class="staffsection">
+  async function fetchStaffData() {
+    const url = "https://opensheet.elk.sh/1AeI8xr49faAEo1Y3V7fQQSiFGCDLTBPpZcpV96hV1UI/Sheet1";
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      const container = document.getElementById("staff-container");
+      container.innerHTML = ""; // Clear previous content
+
+      const subjects = {};
+
+      const emojiMap = {
+        "ENGLISH": "📘",
+        "TAMIL": "📝",
+        "HINDI": "🔤",
+        "MATHS": "➗",
+        "MATHEMATICS": "➗",
+        "COMMERCE": "💰",
+        "ECONOMICS": "📊",
+        "SCIENCE": "🔬",
+        "BIOLOGY": "🧬",
+        "PHYSICS": "⚛️",
+        "CHEMISTRY": "🧪",
+        "SOCIAL": "🌍",
+        "SOCIAL SCIENCE": "🌏",
+        "COMPUTER SCIENCE": "💻",
+        "MORAL SCIENCE": "🧠",
+        "LIFE SKILLS": "🌱",
+        "PHYSICAL EDUCATION": "🏃‍♂️",
+        "DRAWING": "🎨",
+        "G.K": "🧠",
+        "RHYMES": "🎵",
+        "STORY": "📖",
+        "COMMUNICATION": "🗣️",
+        "EVS": "🌿",
+        "BUSINESSMATHS": "📈",
+        "OTHERS": "📚"
+      };
+
+      function getEmoji(subject) {
+        let normalized = subject.toUpperCase();
+
+        for (let key in emojiMap) {
+          if (normalized.includes(key)) {
+            return emojiMap[key];
+          }
+        }
+
+        return emojiMap["OTHERS"];
+      }
+
+      data.forEach(entry => {
+        let rawSubject = entry["subject"] || "Others";
+        const normalizedSubject = rawSubject.toUpperCase();
+        const teacher = (entry["teacher name"] || "").toUpperCase();
+        const classTeacher = entry["Class Teacher Of"] || "—";
+        const otherClasses = entry["other Classes taught"] || "—";
+
+        if (!subjects[normalizedSubject]) {
+          subjects[normalizedSubject] = {
+            rawSubject,
+            teachers: []
+          };
+        }
+
+        subjects[normalizedSubject].teachers.push({ teacher, classTeacher, otherClasses });
+      });
+
+      for (let subjectKey in subjects) {
+        const group = subjects[subjectKey];
+        const emoji = getEmoji(subjectKey);
+
+        const title = document.createElement("h3");
+        title.className = "subject-title";
+        title.innerHTML = `${emoji} ${group.rawSubject}`;
+
+        const table = document.createElement("table");
+        table.className = "subject-table";
+        table.innerHTML = `
+          <thead>
+            <tr>
+              <th>Teacher Name</th>
+              <th>Class Teacher Of</th>
+              <th>Other Classes Taught</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${group.teachers.map(({ teacher, classTeacher, otherClasses }) => `
+              <tr>
+                <td class="teacher-name">${teacher}</td>
+                <td>${classTeacher}</td>
+                <td>${otherClasses}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        `;
+
+        container.appendChild(title);
+        container.appendChild(table);
+      }
+    } catch (error) {
+      console.error("Error fetching staff data:", error);
+      document.getElementById("staff-container").innerText = "Failed to load staff data.";
+    }
+  }
+
+  fetchStaffData();
+  </script>
+
+  </body>
+</body>
+</html>
