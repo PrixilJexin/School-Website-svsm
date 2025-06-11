@@ -91,13 +91,14 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
             <li><a class="dropdown-item" href="school-overview.html">School Overview</a></li>
+            <li><a class="dropdown-item" href="founder.html">Our Founder</a></li> 
             <li><a class="dropdown-item" href="management.html">Management & Staff</a></li>
-            <li><a class="dropdown-item" href="scholarships.html">School Achievements</a></li>
+            <li><a class="dropdown-item" href="scholarships.html">Scholarships Offered</a></li>
         </ul>
     </li>
 
     <!-- Academics Dropdown -->
-    <li class="nav-item dropdown">
+ <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Academics
         </a>
@@ -119,7 +120,6 @@
             <li><a class="dropdown-item" href="culturals.html">Culturals Event</a></li>
         </ul>
     </li>
-
     <!-- Student Life Dropdown -->
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="studentLifeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -156,11 +156,20 @@
 <section class="news-strip">
   <div class="news-container">
     <div class="news-marquee">
-      <span>🎓 Admissions for 2025 are now open! &nbsp;&nbsp;&nbsp;</span>
-      <span>🏀 Inter-school basketball tournament this Friday. &nbsp;&nbsp;&nbsp;</span>
-      <span>📢 Parent-teacher meeting on 10th June. &nbsp;&nbsp;&nbsp;</span>
-      <span>💻 AI Workshop registration closes soon! &nbsp;&nbsp;&nbsp;</span>
-      <span>🌱 Join the Eco Club’s green campus drive! &nbsp;&nbsp;&nbsp;</span>
+      <div class="marquee-content">
+        <span>🎓 Admissions for 2025 are now open! &nbsp;&nbsp;&nbsp;</span>
+        <span>🏀 Inter-school basketball tournament this Friday. &nbsp;&nbsp;&nbsp;</span>
+        <span>📢 Parent-teacher meeting on 10th June. &nbsp;&nbsp;&nbsp;</span>
+        <span>💻 AI Workshop registration closes soon! &nbsp;&nbsp;&nbsp;</span>
+        <span>🌱 Join the Eco Club’s green campus drive! &nbsp;&nbsp;&nbsp;</span>
+      </div>
+      <div class="marquee-content">
+        <span>🎓 Admissions for 2025 are now open! &nbsp;&nbsp;&nbsp;</span>
+        <span>🏀 Inter-school basketball tournament this Friday. &nbsp;&nbsp;&nbsp;</span>
+        <span>📢 Parent-teacher meeting on 10th June. &nbsp;&nbsp;&nbsp;</span>
+        <span>💻 AI Workshop registration closes soon! &nbsp;&nbsp;&nbsp;</span>
+        <span>🌱 Join the Eco Club’s green campus drive! &nbsp;&nbsp;&nbsp;</span>
+      </div>
     </div>
   </div>
 </section>
@@ -171,11 +180,13 @@
   <!-- Quick Links -->
   <div class="hero-quick-links">
     <h3>Quick Links</h3>
-    <a href="#about">Learn more about us</a>
-    <a href="#services">Explore our services</a>
-    <a href="#projects">See recent projects</a>
-    <a href="#contact">Get in touch</a>
-    <a href="#faq">Our Magazine</a>
+    <a href="subjectsoffered.html">Subjects Offered</a>  
+    <a href="clubs.html">Clubs & Activities</a>
+    <a href="annual-day.html#magazine-section">Our Magazine</a>
+    <a href="exam-dates.html">Exam Schedules</a>
+    <a href="curriculum.html">Curriculum</a>
+  
+    
   </div>
 
   <!-- Image Carousel -->
@@ -183,9 +194,10 @@
     <img src="images/Untitled design (1).jpg" alt="Image 1" class="pic">
     <img src="images/1Z8A7392.jpg" alt="Image 2" class="pic">
     <img src="images/IMG_6945.JPG" alt="Image 3" class="pic">
-    <img src="images/IMG_20230802_112157.jpg" alt="Image 4" class="pic">
+    <img src="images\1Z8A7243 (1) (1).jpg" alt="Image 4" class="pic">
     <img src="images/IMG_6891.JPG" alt="Image 5" class="pic">
     <img src="images/1Z8A0031.JPG" alt="Image 6" class="pic">
+    <img src="images\Screenshot 2025-06-11 112051.png" alt="Image 7" class="pic">
   </div>
 
   <!-- Recent Updates -->
@@ -200,6 +212,19 @@
       Contact us. To enquire about admissions.
     </div>
   </div>
+  
+  <div class="scroll-down-wrapper">
+  <button class="scroll-down-btn" onclick="scrollToSlightlyLower()">⬇ Scroll Down</button>
+</div>
+<script>
+  function scrollToSlightlyLower() {
+    window.scrollBy({
+      top: 600, // Amount of vertical scroll in pixels
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+</script> 
 
 </section>
 
@@ -266,7 +291,7 @@
               <div class="col-lg-5">
                 <h4 class="fw-semibold mb-3">Learning extends far beyond textbooks here.</h4>
                 <p class="text-muted">Education here is an experience — not just a syllabus. From arts to innovation labs, students engage in hands-on learning and expressive outlets that fuel creativity and critical thinking beyond the classroom walls.</p>
-                <a href="contact.html" class="btn btn-outline-primary mt-2">Explore Here <i class="bi bi-arrow-right ms-2"></i></a>
+                <a href="annual-day.html" class="btn btn-outline-primary mt-2">Explore Here <i class="bi bi-arrow-right ms-2"></i></a>
               </div>
             </div>
           </div>
@@ -282,7 +307,7 @@
               <div class="col-lg-5">
                 <h4 class="fw-semibold mb-3">Strong minds start with strong bodies.</h4>
                 <p class="text-muted">Our school promotes an active lifestyle through structured sports programs, dedicated coaches, and inter-house competitions that build teamwork, discipline, and school spirit. Fitness is part of our foundation.</p>
-                <a href="sports.html" class="btn btn-outline-primary mt-2">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                
               </div>
             </div>
           </div>
@@ -297,7 +322,7 @@
               <div class="col-lg-5">
                 <h4 class="fw-semibold mb-3">Every child thrives when school and home unite.</h4>
                 <p class="text-muted">We work hand-in-hand with parents to support every child’s journey. Through real-time communication, regular feedback, and tech-enabled tools, we ensure parents stay informed, involved, and empowered.</p>
-                <a href="products.html" class="btn btn-outline-primary mt-2">Explore Here <i class="bi bi-arrow-right ms-2"></i></a>
+                
               </div>
             </div>
           </div>
@@ -308,53 +333,6 @@
     </div>
   </div>
 </section>
-
-    <section class="slick-slideshow" style="position: relative; z-index: 1;">
-
-        <div class="slick-custom">
-            <img src="images/slideshow/IMG_5702.JPG" class="img-fluid" alt="">
-            <div class="slick-bottom">
-                <div class="slick-content-box">
-                    <h1 class="slick-title">Guiding Lights</h1>
-                    <p class="lead text-white mt-lg-3 mb-lg-5">
-                        Where Mentors Lead, Students Follow<br>
-                        Our teachers stand not just in front,<br> 
-                        but with our students — shaping minds, inspiring hearts.
-                    </p>
-                    <a href="about.html" class="btn custom-btn">Learn more</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slick-custom">
-            <img src="images/slideshow/IMG_8226.JPG" class="img-fluid" alt="">
-            <div class="slick-bottom">
-                <div class="slick-content-box">
-                    <h1 class="slick-title">Rise & Align</h1>
-                    <p class="lead text-white mt-lg-3 mb-lg-5">
-                        Where students and principals stand shoulder-to-shoulder,<br> 
-                        kickstarting each day united in purpose.
-                    </p>
-                    <a href="products.html" class="btn custom-btn">Explore</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slick-custom">
-            <img src="images\WhatsApp-Image-2024-01-12-at-10.15.23-2.jpeg" class="img-fluid" alt="">
-            <div class="slick-bottom">
-                <div class="slick-content-box">
-                    <h1 class="slick-title">Legacy of Excellence</h1>
-                    <p class="lead text-white mt-lg-3 mb-lg-5">
-                        75+ Years of Academic Brilliance<br>
-                        Nurturing minds and shaping futures since 1947.
-                    </p>
-                    <a href="contact.html" class="btn custom-btn">Enroll Now</a>
-                </div>
-            </div>
-        </div>
-
-    </section>
 
 <div style="height: 0px !important; background-color: white;"></div>
 
@@ -495,7 +473,7 @@
         <p class="feature-description">
           A joyful beginning to the journey of learning. Our foundational years focus on nurturing curiosity through fun, stories, colors, and interactive activities that build essential life and academic skills.
         </p>
-        <p><a class="btn feature-btn" href="#">Explore Foundation »</a></p>
+        <p><a class="btn feature-btn" href="subjectsoffered.html">Explore Foundation »</a></p>
       </div>
 
       <!-- 6th to 10th -->
@@ -505,7 +483,7 @@
         <p class="feature-description">
           These are the discovery years. We shape critical thinking through real-world projects, science labs, extracurriculars, and a strong academic base that prepares students for their higher secondary goals.
         </p>
-        <p><a class="btn feature-btn" href="#">Explore Middle School »</a></p>
+        <p><a class="btn feature-btn" href="subjectsoffered.html">Explore Middle School »</a></p>
       </div>
 
       <!-- 11th and 12th -->
@@ -515,7 +493,7 @@
         <p class="feature-description">
           The launchpad to the future. Our senior secondary curriculum offers academic rigor, career counseling, and competitive exam prep—empowering students to step into college and beyond with confidence.
         </p>
-        <p><a class="btn feature-btn" href="#">Explore Senior School »</a></p>
+        <p><a class="btn feature-btn" href="subjectsoffered.html">Explore Senior School »</a></p>
       </div>
       
     </div>

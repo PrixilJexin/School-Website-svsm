@@ -81,63 +81,98 @@
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
-/* ===== GALLERY SECTION ===== */
-.gallery-section {
-  background-color: #f8f9fa;
-  padding: 80px 20px;
-  font-family: 'Nunito', sans-serif;
+
+.sports-section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background: #fefefe;
 }
 
-.gallery-header {
+.sports-section__title {
+  font-size: 2.8rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  letter-spacing: 1.2px;
 }
 
-.gallery-header h2 {
-  font-size: 38px;
-  color: #d62828;
-  text-transform: uppercase;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.gallery-header p {
-  color: #444;
-  font-size: 18px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.gallery-grid {
+.sports-section__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 0 10px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
 }
 
-.gallery-item {
-  position: relative;
-  overflow: hidden;
+/* Individual card styling */
+.sports-card {
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem 2.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-left: 6px solid transparent;
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
+.sports-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.gallery-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+/* Sport specific border colors */
+.sports-card--basketball {
+  border-left-color: #f39c12; /* warm orange */
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
+.sports-card--throwball {
+  border-left-color: #e74c3c; /* vibrant red */
 }
 
+.sports-card--handball {
+  border-left-color: #2980b9; /* bold blue */
+}
 
+.sports-card--athletics {
+  border-left-color: #27ae60; /* fresh green */
+}
+
+.sports-card__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #34495e;
+  letter-spacing: 0.5px;
+}
+
+.sports-card__content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  flex-grow: 1;
+  user-select: none; /* prevents accidental text selection on hover */
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .sports-section__title {
+    font-size: 2.2rem;
+  }
+  
+  .sports-card {
+    padding: 1.5rem 1.8rem;
+  }
+  
+  .sports-card__title {
+    font-size: 1.4rem;
+  }
+  
+  .sports-card__content {
+    font-size: 0.95rem;
+  }
+}
