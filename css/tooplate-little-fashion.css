@@ -154,6 +154,16 @@
   position: relative; /* keep default flow, adjust if fixed */
   z-index: 1030; /* higher than default Bootstrap */
   font-family: 'Inter' sans-serif;
+  color: white !important; /* Make all text white */
+}
+
+/* Make all links and navbar items white */
+.navbar a,
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .dropdown-toggle,
+.navbar .dropdown-item {
+  color: white !important;
 }
 
 /* Dropdown Menu Style override */
@@ -199,6 +209,7 @@
   border: 1px solid #581845 !important;
   transform: scale(1.05);
 }
+
 
 /*---------------------------
           NEWS STRIP
@@ -386,7 +397,7 @@
 .scroll-down-wrapper {
   text-align: center;
   margin-top: 30px;
-  padding-left: 38rem;
+  padding-left: 38  rem;
 }
 
 .scroll-down-btn {
