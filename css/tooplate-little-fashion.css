@@ -227,6 +227,7 @@
     padding-bottom: 0.25rem !important;
   }
 
+
   .navbar-brand {
     font-size: 1rem !important;  /* Adjust brand text size */
   }
@@ -669,6 +670,36 @@
   @keyframes spinner {
     to {transform: rotate(360deg);}
   }
+@media (max-width: 768px) {
+  .patron-content {
+    display: flex !important;
+    flex-direction: column !important; /* Main stack: top row + text block */
+    gap: 1rem !important;
+  }
+
+  .patron-top-row {
+    display: flex !important;
+    flex-direction: row !important; /* button + image in a row */
+    align-items: center;
+    gap: 1rem !important;
+    width: 100%;
+  }
+
+  .left-button-part {
+    flex: 1 !important;
+    text-align: left;
+  }
+
+  .image-wrapper {
+    flex: 0 0 120px !important;
+    max-width: 120px !important;
+  }
+
+  .patron-text-block {
+    width: 100% !important;
+  }
+}
+
 
   /*        PATRON TAB           */
   
@@ -736,6 +767,9 @@
   color: #1cb0ff;
   font-family: 'Playfair Display', serif;
 }
+
+
+
 
 .patron-text {
   font-family: 'Inter', sans-serif;
