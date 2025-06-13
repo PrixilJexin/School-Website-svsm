@@ -193,7 +193,7 @@
 .dropdown-menu .dropdown-item {
   color: #fff !important;
   padding: 10px 20px !important;
-  margin: 5px 10px !important;
+  margin: 5px 1px !important;
   border-radius: 8px !important;
   background-color: rgba(255, 255, 255, 0.05) !important;
   transition: all 0.3s ease !important;
@@ -397,7 +397,7 @@
 .scroll-down-wrapper {
   text-align: center;
   margin-top: 30px;
-  padding-left: 38  rem;
+  padding-left: 38rem;
 }
 
 .scroll-down-btn {
