@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".hero-vincent-content h1")) {
     gsap.from(".hero-vincent-content h1", {
       opacity: 0,
-      y: 80,
+      y: 80,  
       scale: 0.95,
       duration: 1.2,
       ease: "power4.out",
