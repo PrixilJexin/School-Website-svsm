@@ -559,14 +559,16 @@ fetch('https://docs.google.com/spreadsheets/d/1HvtONb5X_5EXHb8JLKaqSN6mPbthiLVrn
     const newsMarquee = [];
     const noticeBoard = [];
 
-    rows.forEach(row => {
+    // ✅ Skip the header row by starting from i = 1
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i];
       const newsCell = row.c[0] ? row.c[0].v : "";
       const noticeCell = row.c[1] ? row.c[1].v : "";
       if (newsCell) newsMarquee.push(newsCell);
       if (noticeCell) noticeBoard.push(noticeCell);
-    });
+    }
 
-    // Update marquee containers
+    // ✅ Update marquee containers
     document.querySelectorAll('.marquee-content').forEach(container => {
       container.innerHTML = '';
       newsMarquee.forEach(item => {
@@ -576,13 +578,14 @@ fetch('https://docs.google.com/spreadsheets/d/1HvtONb5X_5EXHb8JLKaqSN6mPbthiLVrn
       });
     });
 
-    // Update notice board containers
+    // ✅ Update notice board containers
     document.querySelectorAll('.hero-update-float').forEach((notice, index) => {
       notice.innerHTML = noticeBoard[index] ? noticeBoard[index].replace(/\n/g, "<br>") : "";
     });
   })
   .catch(error => console.error("Error loading Google Sheets data:", error));
 </script>
+
 
 <!-- =================== END: Dynamic Google Sheets Content =================== -->
 
