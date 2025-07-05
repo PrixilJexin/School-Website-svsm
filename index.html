@@ -56,26 +56,6 @@
     
         <main>
           
-          <section class="news-strip">
-  <div class="news-container">
-    <div class="news-marquee">
-      <div class="marquee-content">
-        <span>📢 The World Blood Donor Day - JRC (JUNE 14)&nbsp;&nbsp;&nbsp;</span>
-        <span>📢  The Investiture Ceremony - (JUNE 18) &nbsp;&nbsp;&nbsp;</span>
-        <span>📢  Principal's Meet (CLASS X - XII GIRLS) - (JUNE 19)&nbsp;&nbsp;&nbsp;</span>
-        <span>📢  Principal's Meet (CLASS X - XII BOYS) - (JUNE 20)&nbsp;&nbsp;&nbsp;</span>
-        <span>📢  International Day of Yoga (JUNE 21) &nbsp;&nbsp;&nbsp;</span>
-      </div>
-      <div class="marquee-content">
-        <span>📢  Inauguration of Literary & Service Units (JUNE 25) &nbsp;&nbsp;&nbsp;</span>
-        <span>📢  The World Blood Donor Day - JRC (JUNE 14) &nbsp;&nbsp;&nbsp;</span>
-        <span>📢  Principal's Meet (CLASS X - XII GIRLS) - (JUNE 19)&nbsp;&nbsp;&nbsp;</span>
-        <span>📢  Principal's Meet (CLASS X - XII BOYS) - (JUNE 20) &nbsp;&nbsp;&nbsp;</span>
-        <span>📢  International Day of Yoga (JUNE 21) &nbsp;&nbsp;&nbsp;</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <nav class="navbar navbar-expand-lg">
@@ -218,19 +198,23 @@
     <img src="images/1Z8A0031.JPG" alt="Image 6" class="pic">
     <img src="images\Screenshot 2025-06-12 151411.png" alt="Image 7" class="pic">
   </div>
-
-  <!-- Recent Updates -->
-  <div class="hero-recent-updates">
-    <h3 style="text-align: center;">Notice Board</h3>
-    <div class="hero-update-float" style="text-align: center;">
-      A Hearty Welcome <br>
-      to all the students<br>
-      TO THE NEW ACADEMIC YEAR.
-    </div>
-    <div class="hero-update-float" style="text-align: center;">
-      NOTHING BEATS A GREAT SMILE<br>
+  
+<section class="news-strip">
+  <div class="news-container">
+    <div class="news-marquee">
+      <div class="marquee-content"></div>
+      <div class="marquee-content"></div>
     </div>
   </div>
+</section>
+
+<!-- Recent Updates -->
+<div class="hero-recent-updates">
+  <h3 style="text-align: center;">Notice Board</h3>
+  <div class="hero-update-float" style="text-align: center;"></div>
+  <div class="hero-update-float" style="text-align: center;"></div>
+</div>
+
   
   <div class="scroll-down-wrapper">
   <button class="scroll-down-btn" onclick="scrollToSlightlyLower()">⬇ Scroll Down</button>
@@ -563,6 +547,45 @@
         <script src="js/slick.min.js"></script>
         <script src="js/custom.js"></script>
         <script src="js/navbar.js"></script>
+<!-- =================== START: Dynamic Google Sheets Content =================== -->
+<script>
+fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vToUr4mvzjN-CIwbkuy8bmZLXW1YIXT_iN5W1_kGDK2HRmQgI7lOV8DThYbNpNHhGCeAFSICPaUPO5r/gviz/tq?tqx=out:json')
+  .then(res => res.text())
+  .then(dataText => {
+    const jsonData = JSON.parse(dataText.substring(47).slice(0, -2));
+    const table = jsonData.table;
+    const rows = table.rows;
+
+    const newsMarquee = [];
+    const noticeBoard = [];
+
+    rows.forEach(row => {
+      const newsCell = row.c[0] ? row.c[0].v : "";
+      const noticeCell = row.c[1] ? row.c[1].v : "";
+      if (newsCell) newsMarquee.push(newsCell);
+      if (noticeCell) noticeBoard.push(noticeCell);
+    });
+
+    // Update marquee containers
+    document.querySelectorAll('.marquee-content').forEach(container => {
+      container.innerHTML = '';
+      newsMarquee.forEach(item => {
+        const span = document.createElement('span');
+        span.innerHTML = item + "&nbsp;&nbsp;&nbsp;";
+        container.appendChild(span);
+      });
+    });
+
+    // Update notice board containers
+    document.querySelectorAll('.hero-update-float').forEach((notice, index) => {
+      notice.innerHTML = noticeBoard[index] ? noticeBoard[index].replace(/\n/g, "<br>") : "";
+    });
+  })
+  .catch(error => console.error("Error loading Google Sheets data:", error));
+</script>
+<!-- =================== END: Dynamic Google Sheets Content =================== -->
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/timeline.js"></script>
