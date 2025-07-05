@@ -198,7 +198,7 @@
     <img src="images/1Z8A0031.JPG" alt="Image 6" class="pic">
     <img src="images\Screenshot 2025-06-12 151411.png" alt="Image 7" class="pic">
   </div>
-  
+
 <section class="news-strip">
   <div class="news-container">
     <div class="news-marquee">
@@ -549,7 +549,7 @@
         <script src="js/navbar.js"></script>
 <!-- =================== START: Dynamic Google Sheets Content =================== -->
 <script>
-fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vToUr4mvzjN-CIwbkuy8bmZLXW1YIXT_iN5W1_kGDK2HRmQgI7lOV8DThYbNpNHhGCeAFSICPaUPO5r/gviz/tq?tqx=out:json')
+fetch('https://docs.google.com/spreadsheets/d/1HvtONb5X_5EXHb8JLKaqSN6mPbthiLVrnSTDVHdKud0/gviz/tq?tqx=out:json')
   .then(res => res.text())
   .then(dataText => {
     const jsonData = JSON.parse(dataText.substring(47).slice(0, -2));
@@ -571,7 +571,7 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vToUr4mvzjN-CIwbkuy8bmZLX
       container.innerHTML = '';
       newsMarquee.forEach(item => {
         const span = document.createElement('span');
-        span.innerHTML = item + "&nbsp;&nbsp;&nbsp;";
+        span.innerHTML = "📢 " + item + "&nbsp;&nbsp;&nbsp;";
         container.appendChild(span);
       });
     });
@@ -583,6 +583,7 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vToUr4mvzjN-CIwbkuy8bmZLX
   })
   .catch(error => console.error("Error loading Google Sheets data:", error));
 </script>
+
 <!-- =================== END: Dynamic Google Sheets Content =================== -->
 
 
