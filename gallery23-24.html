@@ -20,7 +20,7 @@
         <link href="css/bootstrap-icons.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/slick.css"/>
-        <link rel="stylesheet" href="css/club-styles.css"/>
+        <link rel="stylesheet" href="css/gallery.css"/>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -155,6 +155,46 @@
             </nav>
 
 
+<section class="gallery-section">
+  <h2>School Gallery 2023-2024</h2>
+  <div class="gallery-grid">
+    <img src="images/Gallery/2023-2024/238A4139.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/238A5114.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/238A6298.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/238A6803.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/238A7520.JPG" alt="Gallery Image" class="thumbnail">   
+
+    <img src="images/Gallery/2023-2024/IMG_0035.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_0079.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_0165.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_0238.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_0242.JPG" alt="Gallery Image" class="thumbnail">
+
+    <img src="images/Gallery/2023-2024/IMG_0258.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_0591.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_0718.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_1123.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_1284.JPG" alt="Gallery Image" class="thumbnail">
+
+    <img src="images/Gallery/2023-2024/IMG_1332.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_1713.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_1732.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_2824.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_5391.JPG" alt="Gallery Image" class="thumbnail">
+
+    <img src="images/Gallery/2023-2024/IMG_5583.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_5998.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_8168.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/IMG_9247.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2023-2024/Teachers Day.JPG" alt="Gallery Image" class="thumbnail">
+  </div>
+
+  <!-- Fullscreen Overlay -->
+  <div id="overlay" class="overlay hidden">
+    <img id="overlay-img" src="" alt="Full Image">
+  </div>
+</section>
+
 
 
 
@@ -207,6 +247,26 @@
                 </div>
             </div>
         </footer>
+        <script>
+const thumbnails = document.querySelectorAll('.thumbnail');
+const overlay = document.getElementById('overlay');
+const overlayImg = document.getElementById('overlay-img');
+
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', () => {
+    overlayImg.src = thumbnail.src;
+    overlay.classList.remove('hidden');
+  });
+});
+
+overlay.addEventListener('click', (e) => {
+  if (e.target !== overlayImg) {
+    overlay.classList.add('hidden');
+    overlayImg.src = '';
+  }
+});
+</script>
+
 
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>

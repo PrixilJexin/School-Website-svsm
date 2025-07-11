@@ -20,8 +20,7 @@
         <link href="css/bootstrap-icons.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/slick.css"/>
-        <link rel="stylesheet" href="css/club-styles.css"/>
-        <link rel="stylesheet" href="css/scholarship.css"/>
+        <link rel="stylesheet" href="css/gallery.css"/>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -29,7 +28,6 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="//static.anyflip.com/plugin/LightBox/js/anyflp-light-box-api-min.js"></script>
-        <script src="js/subjects.js"></script>
 
 
     </head>
@@ -139,8 +137,9 @@
             Gallery
         </a>
         <ul class="dropdown-menu" aria-labelledby="studentLifeDropdown">
-            <li><a class="dropdown-item" href="gallery23-24.html">2023-2024</a></li>
-            <li><a class="dropdown-item" href="gallery24-25.html">2024-2025</a></li>
+            <li><a class="dropdown-item" href="gallery23.html">2023</a></li>
+            <li><a class="dropdown-item" href="gallery24.html">2024</a></li>
+            <li><a class="dropdown-item" href="gallery25.html">2025</a></li>
         </ul>
     </li>
 
@@ -154,23 +153,51 @@
 </div>
                 </div>
             </nav>
-            
-<section class="scholarship-wrapper">
-  <div class="scholarship-header">
-    <h2 class="scholarship-title">🎓 Scholarships Offered</h2>
-    <p class="scholarship-subtitle">Stay informed about the latest scholarships available for our students. This section is automatically updated via Google Docs.</p>
+
+
+
+<section class="gallery-section">
+  <h2>School Gallery 2024-2025</h2>
+  <div class="gallery-grid">
+    <img src="images/Gallery/2024-2025/1Z8A7850.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/1Z8A7854.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/DSC06218.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_0211.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_0431.JPG" alt="Gallery Image" class="thumbnail">
+
+    <img src="images/Gallery/2024-2025/IMG_0435.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_0462.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_0904.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_1038.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_1075.JPG" alt="Gallery Image" class="thumbnail">
+
+    <img src="images/Gallery/2024-2025/IMG_1153.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_1266.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_1279.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_1598.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_1822.JPG" alt="Gallery Image" class="thumbnail">
+
+    <img src="images/Gallery/2024-2025/IMG_2102.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_2958.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_3219.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_5809.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_6311.JPG" alt="Gallery Image" class="thumbnail">
+
+    <img src="images/Gallery/2024-2025/IMG_8137.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_8272.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_8752.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/IMG_9838.JPG" alt="Gallery Image" class="thumbnail">
+    <img src="images/Gallery/2024-2025/WhatsApp Image 2025-02-19 at 5.53.32 PM (1).jpeg" alt="Gallery Image" class="thumbnail">
   </div>
 
-  <div class="scholarship-embed-card">
-    <div class="scholarship-iframe-container">
-      <iframe 
-        src="https://docs.google.com/document/d/e/2PACX-1vS7EOr2-zemLvxur2cI_495ZQkseKJWk6rgetyAkIUXvCmAx8Gzb2wL5rkaIMOpBLmU1y9r6mlti15M/pub?embedded=true"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
+  <!-- Fullscreen Overlay -->
+  <div id="overlay" class="overlay hidden">
+    <img id="overlay-img" src="" alt="Full Image">
   </div>
 </section>
+
+
+
 
 </body>
 
@@ -219,6 +246,25 @@
                 </div>
             </div>
         </footer>
+<script>
+const thumbnails = document.querySelectorAll('.thumbnail');
+const overlay = document.getElementById('overlay');
+const overlayImg = document.getElementById('overlay-img');
+
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', () => {
+    overlayImg.src = thumbnail.src;
+    overlay.classList.remove('hidden');
+  });
+});
+
+overlay.addEventListener('click', (e) => {
+  if (e.target !== overlayImg) {
+    overlay.classList.add('hidden');
+    overlayImg.src = '';
+  }
+});
+</script>
 
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
@@ -227,8 +273,5 @@
         <script src="js/jQuery.headroom.js"></script>
         <script src="js/slick.min.js"></script>
         <script src="js/custom.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
     </body>
 </html>
