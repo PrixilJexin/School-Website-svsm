@@ -1,0 +1,186 @@
+/* === All Classes Section === */
+.all-classes-section {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #eef2f3, #d6e4f0);
+  padding: 60px 20px;
+  font-family: 'Nunito', sans-serif;
+  color: #2c3e50;
+}
+
+.all-classes-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.all-classes-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2d3436;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.all-classes-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 45px;
+  color: #636e72;
+  font-weight: 600;
+}
+
+/* Accordion Styles */
+.accordion-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border: none;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.accordion-toggle {
+  width: 100%;
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 20px 28px;
+  border: none;
+  cursor: pointer;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.4s ease;
+}
+
+.accordion-toggle:hover,
+.accordion-toggle:focus {
+  background: linear-gradient(90deg, #2980b9, #6c3483);
+  outline: none;
+}
+
+.accordion-icon {
+  font-size: 1.75rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-toggle[aria-expanded="true"] .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  padding: 22px 32px;
+  color: #2d3436;
+  font-size: 1rem;
+  line-height: 1.7;
+  background: rgba(255, 255, 255, 0.65);
+  border-top: 1px solid rgba(52, 152, 219, 0.2);
+  border-radius: 0 0 16px 16px;
+}
+
+/* Class List */
+.class-list {
+  list-style-type: disc;
+  padding-left: 22px;
+  margin: 0;
+}
+
+.class-list li {
+  margin-bottom: 10px;
+}
+
+/* Streams Cards inside Higher Secondary */
+.streams-intro {
+  margin-bottom: 22px;
+  font-style: italic;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.stream-cards-wrapper {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stream-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  flex: 1 1 320px;
+  max-width: 360px;
+  padding: 28px 22px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+  backdrop-filter: blur(8px);
+}
+
+.stream-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.15);
+}
+
+.stream-name {
+  font-size: 1.65rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #3498db;
+  color: #2c3e50;
+}
+
+.stream-content h4 {
+  font-size: 1.15rem;
+  margin: 18px 0 10px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.stream-subjects-list {
+  list-style-type: circle;
+  padding-left: 20px;
+  margin: 0;
+  color: #2d3436;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Colored Borders per Stream */
+.stream-commerce .stream-name {
+  border-color: #27ae60;
+  color: #27ae60;
+}
+
+.stream-compsci .stream-name {
+  border-color: #2980b9;
+  color: #2980b9;
+}
+
+.stream-biology .stream-name {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stream-cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stream-card {
+    max-width: 90vw;
+  }
+}

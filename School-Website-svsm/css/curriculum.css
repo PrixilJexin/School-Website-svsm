@@ -1,0 +1,92 @@
+.curri-section {
+  background: #ffffff; /* White clean background */
+  max-width: 900px;    /* Limit width for readability */
+  margin: 2.5rem auto; /* Center with spacing */
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.curri-section-title {
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #004d40; /* Deep teal */
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+  border-bottom: 3px solid #00bfa5; /* Bright accent line */
+  padding-bottom: 0.4rem;
+}
+
+.curri-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+  color: #555555;
+}
+
+.curri-highlight {
+  color: #00796b; /* Medium teal highlight */
+  font-weight: 600;
+  font-style: italic;
+}
+
+.curri-list {
+  list-style: inside disc;
+  padding-left: 0;
+  margin-bottom: 1.6rem;
+  color: #444444;
+  font-size: 1.05rem;
+}
+
+.curri-list li {
+  margin-bottom: 0.75rem;
+}
+
+.curri-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.curri-downloads a {
+  background: #00bfa5;
+  color: white;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 191, 165, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.curri-downloads a:hover {
+  background-color: #00796b;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .curri-section {
+    padding: 1.5rem 1.5rem;
+    margin: 1.5rem 1rem;
+  }
+  .curri-section-title {
+    font-size: 1.6rem;
+  }
+  .curri-paragraph,
+  .curri-list {
+    font-size: 1rem;
+  }
+  .curri-downloads a {
+    flex: 1 1 100%;
+  }
+}
