@@ -11,29 +11,21 @@
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
-
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
-
         <link rel="stylesheet" href="css/slick.css"/>
         <link rel="stylesheet" href="css/gallery.css"/>
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
         <link href="css/tooplate-little-fashion.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="//static.anyflip.com/plugin/LightBox/js/anyflp-light-box-api-min.js"></script>
-
-
     </head>
     
     <body>
-
         <section class="preloader">
             <div class="spinner">
                 <span class="sk-inner-circle"></span>
@@ -48,37 +40,21 @@
                     </button>
 
 <a class="navbar-brand d-flex align-items-center" href="index.html">
-    <div style="
-        width: 50px;
-        height: 50px;
-        border-radius: 50%; 
-        overflow: hidden;
-        margin-right: 10px;
-        border: 2px solid #000; /* optional frame */
-    ">
-        <img src="images\svslogo.jpeg" alt="School Logo" 
-             style="width: 100%; height: 100%; object-fit: cover;">
+    <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; margin-right: 10px; border: 2px solid #000;">
+        <img src="images/svslogo.jpeg" alt="School Logo" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
-    <strong style="
-  font-size: 27px; 
-  color: #f3f4f6;
-">
-  <span style="color: #fff;">St.Vincent's</span> Matriculation School
-</strong>
-
-<style>
-@media (max-width: 576px) {
-  .navbar strong {
-    font-size: 18px !important;
-  }
-}
-</style>
+    <strong style="font-size: 27px; color: #f3f4f6;">
+      <span style="color: #fff;">St.Vincent's</span> Matriculation School
+    </strong>
+    <style>
+      @media (max-width: 576px) {
+        .navbar strong { font-size: 18px !important; }
+      }
+    </style>
 </a>
-
 
                     <div class="d-lg-none">
                         <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
-
                     </div>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -153,7 +129,6 @@
                 </div>
             </nav>
 
-
 <section class="gallery-section">
   <h2>Sports Meet</h2>
   <div class="gallery-grid">
@@ -192,11 +167,12 @@
   </div>
 
   <!-- Fullscreen Overlay -->
-  <div id="overlay" class="overlay hidden">
-    <img id="overlay-img" src="" alt="Full Image">
-  </div>
+<div id="overlay" class="overlay hidden">
+  <span class="nav-arrow left" id="prev">&#10094;</span>
+  <img id="overlay-img" src="" alt="Full Image">
+  <span class="nav-arrow right" id="next">&#10095;</span>
+</div>
 </section>
-
 
 </body>
 
@@ -213,58 +189,65 @@
 
                     <div class="col-lg-5 col-8">
                         <h5 class="text-white mb-3">Sitemap</h5>
-
                         <ul class="footer-menu d-flex flex-wrap">
                             <li class="footer-menu-item"><a href="index.html" class="footer-menu-link">Home</a></li>
-
                             <li class="footer-menu-item"><a href="gallery.html" class="footer-menu-link">Gallery</a></li>
-
                             <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">About Us</a></li>
-
                             <li class="footer-menu-item"><a href="subjectsoffered.html" class="footer-menu-link">Subjects Offered</a></li>
-
                             <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-4">
                         <h5 class="text-white mb-3">Social</h5>
-
                         <ul class="social-icon">
-
                             <li><a href="#" class="social-icon-link bi-youtube"></a></li>
-
                             <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
-
                             <li><a href="#" class="social-icon-link bi-instagram"></a></li>
-
                             <li><a href="#" class="social-icon-link bi-skype"></a></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </footer>
-        <script>
+
+<script>
 const thumbnails = document.querySelectorAll('.thumbnail');
 const overlay = document.getElementById('overlay');
 const overlayImg = document.getElementById('overlay-img');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
 
-thumbnails.forEach(thumbnail => {
+let currentIndex = 0;
+const images = Array.from(thumbnails).map(img => img.src);
+
+thumbnails.forEach((thumbnail, index) => {
   thumbnail.addEventListener('click', () => {
-    overlayImg.src = thumbnail.src;
+    currentIndex = index;
+    overlayImg.src = images[currentIndex];
     overlay.classList.remove('hidden');
   });
 });
 
 overlay.addEventListener('click', (e) => {
-  if (e.target !== overlayImg) {
+  if (e.target === overlay) {
     overlay.classList.add('hidden');
     overlayImg.src = '';
   }
 });
-</script>
 
+prevBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  overlayImg.src = images[currentIndex];
+});
+
+nextBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex + 1) % images.length;
+  overlayImg.src = images[currentIndex];
+});
+</script>
 
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
