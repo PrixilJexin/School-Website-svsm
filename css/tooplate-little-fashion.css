@@ -692,10 +692,11 @@
     text-align: left;
   }
 
-  .image-wrapper {
-    flex: 0 0 120px !important;
-    max-width: 120px !important;
-  }
+.image-wrapper img {
+  border: none !important;      /* removes any border */
+  width: 100% !important;       /* makes the image take the wrapper’s width */
+  height: auto !important;      /* keeps aspect ratio */
+}
 
   .patron-text-block {
     width: 100% !important;
@@ -830,28 +831,19 @@
   flex-wrap: nowrap;
 }
 
-.image-wrapper {
-  flex: 0 0 200px;
-  background: #ffffff;
-  padding: 0.6rem 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 200px;
-}
 
 .image-wrapper img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.4rem;
-  max-height: 200px;
-  object-fit: cover;
+  width: 250px !important;           /* make it fill wrapper */
+  height: 250px !important;         /* increase height */
+  border-radius: 12rem !important; /* reduce rounded edges */
+  object-fit: cover !important;     /* crop instead of squish */
+  border: none !important;          /* ensure no border */
 }
 
 .image-wrapper:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12rem;
 }
 
 .patron-text-block {
@@ -877,7 +869,7 @@
 
 
 .patron-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif, cursive;
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -933,7 +925,7 @@
 
 #section_motto {
   position: relative;
-  padding: 8px 0;          /* Reduced vertical padding */
+  padding: 2px 0;          /* Reduced vertical padding */
   background: #f0f8ff !important;
   overflow-x: hidden;
   margin-top: -40px;        /* Smaller negative margin */
@@ -951,7 +943,7 @@
 
 .timeline-container {
   position: relative;
-  padding-left: 40px;
+  padding-left: 10px;
   z-index: 2;
   max-height: none;         /* Remove height limit */
   overflow-y: visible;      /* Disable scroll */
@@ -960,14 +952,16 @@
 }
 
 .vertical-scrollable-timeline {
-  border-left-width: 6px;   /* thinner line */
-  padding-left: 25px;
+  border-left-width: 3px;   /* thinner line */
+  padding-left: 1px;
   position: relative;
 }
 
 .vertical-scrollable-timeline li {
+  font-family: 'Petit Formal Script', cursive;
+  font-weight: 600;
   position: relative;
-  margin-bottom: 20px;      /* Tighter spacing */
+  margin-bottom: 1px;      /* Tighter spacing */
   opacity: 0.3;
   transform: translateY(15px); /* Smaller translate */
   transition: all 0.5s ease;
@@ -981,9 +975,9 @@
 
 .vertical-scrollable-timeline h4,
 .vertical-scrollable-timeline p {
-  font-size: 0.9rem;
-  margin: 0;
-  padding: 0;
+  font-size: 1.2rem;
+  margin-right: 0px;
+  padding-right: 0px;
   /* Keep your original colors */
 }
 
